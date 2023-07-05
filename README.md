@@ -23,7 +23,7 @@
 
 В 1947 году американская автомобилестроительная компания [Ford](https://ru.wikipedia.org/wiki/Ford),
 начала широко использовать термин автоматизация, когда был создан отдел автоматизации.
-От чего компания вышла на новый уровень и в следствии чего повысила свою прибыль.
+От чего компания вышла на новый уровень и вследствие чего повысила свою прибыль.
 
 Автоматизация позволяет повысить производительность труда, улучшить качество продукции, оптимизировать
 процессы управления, отстранить человека от производств, опасных для здоровья.
@@ -41,19 +41,64 @@
 [Краткое знакомство с Gradle](https://javarush.com/groups/posts/2126-kratkoe-znakomstvo-s-gradle)
 ######
 ### Maven ###
-Добавляем зависимость в фаил `pom.xml`
+Добавляем *dependency* в фаил `pom.xml`
 Актуальную версию вы можете найти на сайте [Maven Repository](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
-```
+``` markdown
 <dependency>
-<groupId>org.seleniumhq.selenium</groupId>
-<artifactId>selenium-java</artifactId>
-<version>4.10.0</version>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.10.0</version>
 </dependency>
 ```
 
 ### Gradle ###
-Добавляем зависимость в фаил `build.gradle`
+Добавляем *dependency* в фаил `build.gradle`
 ```
 testImplementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
 ```
-В своём проекте буду использовать 
+Добавляем также в *dependency* `JUnit 4` / `JUnit 5`
+
+В своём проекте буду использовать стек:
+
+![Linkedin-url](https://img.shields.io/badge/Java-_11-red) 
+![Linkedin-url](https://img.shields.io/badge/Maven-version_4.0.0-blue)
+![Linkedin-url](https://img.shields.io/badge/JUnit_4-version_4.13.2-blue)
+
+вы можете использовать любую из возможных "комбинаций".
+В конечном итоге получаем вот такой `pom.xml`
+```markdown
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>Selenium_Testing_Tools_Cookbook</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--Selenium Java-->
+        <selenium-java.version>4.10.0</selenium-java.version>
+        <!--JUnit 4-->
+        <junit.version>4.13.2</junit.version>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
