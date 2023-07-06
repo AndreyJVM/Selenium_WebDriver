@@ -1,6 +1,12 @@
-# **Selenium Testing Tools Cookbook** #
+# **Selenium WedDriver** #
 ![](/src/main/resources/photo/selenium-java-1.jpg)
-Всем привет, в данном проекте подробно разберу Selenium WebDriver.
+Доброго времени суток, в данном проекте подробно разберу Selenium WebDriver.
+
+`В проекте использую следующий стек:`
+
+![Linkedin-url](https://img.shields.io/badge/Java-_11-red)
+![Linkedin-url](https://img.shields.io/badge/Maven-version_4.0.0-blue)
+![Linkedin-url](https://img.shields.io/badge/JUnit_4-version_4.13.2-blue)
 
 За основу взял книгу **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha), 
 официальная документация [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
@@ -33,39 +39,43 @@
 которых мы добиваемся автоматизации в наших тестах. Именно поэтому он широко используется в автоматизированном 
 тестирование *Web browser* 
 
-# **Приступим к практике** #
+# **Первые шаги в Selenium** #
 Что бы подключить, *Selenium WebDriver*, нам понадобиться один из сборщиков проектов:
 ###### надеюсь они вам знакомы, если нет вот несколько ссылок на статьи которые введут вас в курс дела
 [Apache Maven — основы](https://habr.com/ru/articles/77382/)
 
 [Краткое знакомство с Gradle](https://javarush.com/groups/posts/2126-kratkoe-znakomstvo-s-gradle)
-######
+
 ### Maven ###
-Добавляем *dependency* в фаил `pom.xml`
-Актуальную версию вы можете найти на сайте [Maven Repository](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
-``` markdown
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.10.0</version>
-</dependency>
-```
+Добавляем *dependency* `selenium-java` в фаил `pom.xml`.
+Самую свежую версию вы можете найти на сайте [Maven Repository](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java)
+<details>
+    <summary>Maven Selenium Java </summary>
+
+    ``` markdown
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.10.0</version>
+    </dependency>```
+</details>
 
 ### Gradle ###
-Добавляем *dependency* в фаил `build.gradle`
+Добавляем *dependency* `selenium-java` в фаил `build.gradle`
+<details>
+    <summary>Gradle Selenium Java </summary>
+
 ```
 testImplementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
 ```
+</details>
+
 Добавляем также в *dependency* `JUnit 4` / `JUnit 5`
 
-В своём проекте буду использовать стек:
-
-![Linkedin-url](https://img.shields.io/badge/Java-_11-red) 
-![Linkedin-url](https://img.shields.io/badge/Maven-version_4.0.0-blue)
-![Linkedin-url](https://img.shields.io/badge/JUnit_4-version_4.13.2-blue)
-
-вы можете использовать любую из возможных "комбинаций".
 В конечном итоге получаем вот такой `pom.xml`
+<details>
+    <summary>pom.xml </summary>
+
 ```markdown
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -102,6 +112,9 @@ testImplementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
     </dependencies>
 </project>
 ```
+</details>
+
+
 ### Разбираем первые Selenium script ###
 Все, что делает Selenium, - это отправляет браузеру команды что-то сделать или отправляет запросы
 на получение информации. Большая часть того, что вы будете делать с Selenium, -
