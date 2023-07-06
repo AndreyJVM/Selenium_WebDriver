@@ -1,5 +1,5 @@
 # **Selenium Testing Tools Cookbook** #
-![](/photo/selenium-java-1.jpg)
+![](/src/main/resources/photo/selenium-java-1.jpg)
 Всем привет, в данном проекте подробно разберу Selenium WebDriver.
 
 За основу взял книгу **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha), 
