@@ -1,24 +1,24 @@
 # **Selenium WedDriver** #
 ![](/src/main/resources/photo/selenium-java-1.jpg)
-Доброго времени суток, в данном проекте подробно разберу Selenium WebDriver.
+Доброго времени суток, меня зовут Андрей Воробьёв, в этом проекте разберу Selenium WebDriver.
 
-`В проекте использую следующий стек:`
+`Используется следующий стек:`
 
 ![Linkedin-url](https://img.shields.io/badge/Java-_11-red)
+
 ![Linkedin-url](https://img.shields.io/badge/Maven-version_4.0.0-blue)
 ![Linkedin-url](https://img.shields.io/badge/JUnit_4-version_4.13.2-blue)
 ![Linkedin-url](https://img.shields.io/badge/Selenium_Java-version_4.10.0-blue)
 
-За основу взял книгу **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha), 
-официальная документация [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
-и прочее интернет ресурсы.
+За основу взял книгу **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha) и 
+официальную документацию [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/).
 
-Начнём с начала, что это такое и зачем он вообще нужен? 
+Начнём с начала, что такое Selenium WebDriver и чем он нам поможет в автоматизированном тестировании? 
 
 **Selenium WebDriver** - это инструмент для автоматизации действий веб-браузера.
-*В большинстве случаев используется для тестирования Web-приложений*, но этим не ограничивается.
-В частности, он может быть использован *для решения рутинных задач администрирования*
-сайта или регулярного получения данных из различных источников (сайтов).
+*В большинстве случаев используется для тестирования Web-приложений*.
+В частности, он может быть использован *для решения рутинных задач администрирования
+сайта* или регулярного получения данных из различных источников (сайтов).
 
 Так так, теперь по порядку. Зачем нам вообще автоматизировать наши действия? Что мы так, не справимся?
 Конечно же справимся, не зря же твоему другу *Чебурашка* (ручному тестировщику) платят денежку, Думаю
@@ -164,3 +164,5 @@ String value = message.getText();
 ```java
     driver.quit();
 ```
+
+https://github.com/AndreyJVM/Selenium_Testing_Tools_Cookbook/blame/06d10b476bd9be16f9ffac1f9fb1fb0f95073dcc/src/test/java/GoogleSearchTest.java#L6-L15
