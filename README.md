@@ -7,6 +7,7 @@
 ![Linkedin-url](https://img.shields.io/badge/Java-_11-red)
 ![Linkedin-url](https://img.shields.io/badge/Maven-version_4.0.0-blue)
 ![Linkedin-url](https://img.shields.io/badge/JUnit_4-version_4.13.2-blue)
+![Linkedin-url](https://img.shields.io/badge/Selenium_Java-version_4.10.0-blue)
 
 За основу взял книгу **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha), 
 официальная документация [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
@@ -52,12 +53,14 @@
 <details>
     <summary>Maven Selenium Java </summary>
 
-    ``` markdown
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>4.10.0</version>
-    </dependency>```
+```markdown
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.10.0</version>
+</dependency>
+```
+
 </details>
 
 ### Gradle ###
