@@ -1,5 +1,5 @@
 # **Selenium Testing Tools Cookbook** #
-![](/src/main/resources/selenium-java-1.jpg)
+![](/photo/selenium-java-1.jpg)
 Всем привет, в данном проекте подробно разберу Selenium WebDriver.
 
 За основу взял книгу **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha), 
@@ -82,23 +82,69 @@ testImplementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--Selenium Java-->
-        <selenium-java.version>4.10.0</selenium-java.version>
+        <selenium-java.version>4.0.0</selenium-java.version>
         <!--JUnit 4-->
         <junit.version>4.13.2</junit.version>
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.10.0</version>
+            <version>${selenium-java.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
+```
+### Разбираем первые Selenium script ###
+Все, что делает Selenium, - это отправляет браузеру команды что-то сделать или отправляет запросы
+на получение информации. Большая часть того, что вы будете делать с Selenium, -
+это комбинация этих основных команд:
+
+1. Запуск браузера, который мы укажем после ключевого слова `new`:
+```java
+WebDriver driver = new ChromeDriver();
+```
+2. Открытие страницы, методу `get()` в качестве параметра передаём URL:
+```java
+  //Вот, можете по залипать немного на миленьких котиков, 
+  // но потом обязательно возвращайтесь ко мне =)
+  driver.get("https://www.youtube.com/watch?v=UXy0KoQwick");
+```
+3. Мы также можем получать информацию от браузера например метод `getTitle()` который вернёт
+название:
+```java
+String title = driver.getTitle();
+```
+4. Часто нам требуется время пока браузер обработает наш запрос, для это в Selenium есть так называем **условия
+ожидания**:
+```java
+driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+```
+5. **Поиск элемента на странице**, наши действия мы будем делать после того как найдём нужный нам элемент, без этого 
+Selenium нас не поймёт:
+В примере мы рассмотрели два способа нахождения элемента через `name` и `cssSelector`
+```java
+WebElement textBox = driver.findElement(By.name("my-text")); 
+WebElement submitButton = driver.findElement(By.cssSelector("button"));
+```
+6. **Действия над элементом**, хорошо в предыдущем шаге мы нашли элемент, теперь можем производить
+всяческие манипуляции:
+```java
+textBox.sendKeys("Selenium");
+submitButton.click();
+```
+7. **Запросить данные у элемента**: Например текст
+```java
+String value = message.getText();
+```
+8. **Закрытие браузера**, После всей нашей проделанном работы нам необходимо завершить сессию:
+```java
+    driver.quit();
 ```
