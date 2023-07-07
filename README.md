@@ -1,6 +1,8 @@
 # **Selenium WedDriver** #
 ![](/src/main/resources/photo/selenium-java-1.jpg)
-Доброго времени суток, меня зовут Андрей Воробьёв, в этом проекте разберу Selenium WebDriver.
+Доброго времени суток, меня зовут Андрей Воробьёв, решил собрать и структурировать информацию о Selenium 
+WebDriver, которую разобью на несколько статей. Наячём с самого простого и закончим написанием полноценных 
+тестов с помощью Selenium WebDriver.
 
 `Используется следующий стек:`
 
@@ -10,10 +12,11 @@
 ![Linkedin-url](https://img.shields.io/badge/JUnit_4-version_4.13.2-blue)
 ![Linkedin-url](https://img.shields.io/badge/Selenium_Java-version_4.10.0-blue)
 
-За основу взял книгу **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha) и 
-официальную документацию [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/).
+Основные источники: 
+- **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha)
+- Официальная документация [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/).
 
-Начнём с начала, что такое Selenium WebDriver и чем он нам поможет в автоматизированном тестировании? 
+Начнём с начала, что такое Selenium WebDriver? Чем он нам поможет в автоматизированном тестировании? 
 
 **Selenium WebDriver** - это инструмент для автоматизации действий веб-браузера.
 *В большинстве случаев используется для тестирования Web-приложений*.
@@ -162,7 +165,5 @@ String value = message.getText();
 ```
 8. **Закрытие браузера**, После всей нашей проделанном работы нам необходимо завершить сессию:
 ```java
-    driver.quit();
+driver.quit();
 ```
-
-https://github.com/AndreyJVM/Selenium_Testing_Tools_Cookbook/blame/06d10b476bd9be16f9ffac1f9fb1fb0f95073dcc/src/test/java/GoogleSearchTest.java#L6-L15
