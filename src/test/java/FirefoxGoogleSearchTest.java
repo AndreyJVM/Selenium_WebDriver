@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Тест, заходит на главную поисковую страницу Google находит поиск по имени,
- * в поисковике вводим произволный текст
+ * в поисковике вводим произвольный текст
  * сравниваем наш текст с тем, что отображается во вкладке
  * если они равны нашим ожиданиям значит тест проходит
  */
@@ -25,7 +25,7 @@ public class FirefoxGoogleSearchTest {
 
     @Before
     public void setUp() {
-        //окрываем браузер Firefox на весь экран и переходим на поисковую страницу Google
+        //открываем браузер Firefox на весь экран и переходим на поисковую страницу Google
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(GOOGLE_URL);
@@ -39,7 +39,7 @@ public class FirefoxGoogleSearchTest {
         element.clear();
         //Текс по которому будем производить поиск
         String findTest = "Автоматизированное тестирование";
-        //Вводим информацию которую хотим найти
+        //Вводим информацию, которую хотим найти
         element.sendKeys(findTest);
         //Кликаем на кнопку поиска
         element.submit();
