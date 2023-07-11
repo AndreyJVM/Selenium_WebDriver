@@ -13,7 +13,7 @@ WebDriver, которую разобью на несколько статей. �
 ![Linkedin-url](https://img.shields.io/badge/Selenium_Java-version_4.10.0-blue)
 
 Основные источники: 
-- **Selenium Testing Tools Cookbook** [Unmesh Gundecha](https://github.com/upgundecha)
+- Selenium Testing Tools Cookbook [Unmesh Gundecha](https://github.com/upgundecha)
 - Официальная документация [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/).
 
 Начнём с начала, что такое Selenium WebDriver? Чем он нам поможет в автоматизированном тестировании? 
