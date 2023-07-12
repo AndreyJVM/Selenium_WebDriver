@@ -217,3 +217,7 @@ driver.quit();
 
 ![](/src/main/resources/photo/img.png)
 
+Искать будем по атрибуту **name**, нам понадобиться вот такая конструкция
+```
+WebElement element = driver.findElement(By.name("q");
+```
